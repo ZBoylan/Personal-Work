@@ -1,0 +1,77 @@
+OS Process Scheduling - Zach Boylan - CS 450
+Algorithm performance and trend analysis
+FCFS and Round Robin algorithms
+Today's date: 2017-12-11
+
+   Number of processes = 19
+
+PID ArrivalTime BurstTime
+ 1     0.375        8
+ 2     2.171        3
+ 3     0.395        2
+ 4     0.603        9
+ 5     2.155        9
+ 6     1.935        6
+ 7     2.766        9
+ 8     1.098       10
+ 9     4.017        8
+10     4.572        9
+11     1.537        5
+12     0.024        6
+13     0.423        9
+14     1.843        2
+15     1.665        3
+16     4.379        5
+17     4.937        1
+18     0.823        4
+19     2.169        9
+
+Round Robin algorithm running now with a time quantum of 3
+  Process  2 has finished with wait time =   3
+  Process  3 has finished with wait time =   6
+  Process 14 has finished with wait time =  38
+  Process 15 has finished with wait time =  40
+  Process 17 has finished with wait time =  46
+  Process  6 has finished with wait time =  59
+  Process 11 has finished with wait time =  74
+  Process 12 has finished with wait time =  76
+  Process 16 has finished with wait time =  82
+  Process 18 has finished with wait time =  84
+  Process  1 has finished with wait time =  85
+  Process  4 has finished with wait time =  87
+  Process  5 has finished with wait time =  90
+  Process  7 has finished with wait time =  93
+  Process  9 has finished with wait time =  99
+  Process 10 has finished with wait time = 101
+  Process 13 has finished with wait time = 104
+  Process 19 has finished with wait time = 107
+  Process  8 has finished with wait time = 107
+
+ *** RR - Average wait time = 72.684
+
+ Processes sorted for FCFS:
+PID ArrivalTime BurstTime WaitTime   Turnaround_Time
+12     0.024        6        0.000 |  6.024 - 0.024 = 6.000
+ 1     0.375        8        5.649 |  14.024 - 0.375 = 13.649
+ 3     0.395        2       13.629 |  16.024 - 0.395 = 15.629
+13     0.423        9       15.601 |  25.024 - 0.423 = 24.601
+ 4     0.603        9       24.422 |  34.024 - 0.603 = 33.422
+18     0.823        4       33.201 |  38.024 - 0.823 = 37.201
+ 8     1.098       10       36.927 |  48.024 - 1.098 = 46.927
+11     1.537        5       46.488 |  53.024 - 1.537 = 51.488
+15     1.665        3       51.359 |  56.024 - 1.665 = 54.359
+14     1.843        2       54.181 |  58.024 - 1.843 = 56.181
+ 6     1.935        6       56.090 |  64.024 - 1.935 = 62.090
+ 5     2.155        9       61.870 |  73.024 - 2.155 = 70.870
+19     2.169        9       70.855 |  82.024 - 2.169 = 79.855
+ 2     2.171        3       79.853 |  85.024 - 2.171 = 82.853
+ 7     2.766        9       82.259 |  94.024 - 2.766 = 91.259
+ 9     4.017        8       90.007 |  102.024 - 4.017 = 98.007
+16     4.379        5       97.645 |  107.024 - 4.379 = 102.645
+10     4.572        9      102.452 |  116.024 - 4.572 = 111.452
+17     4.937        1      111.087 |  117.024 - 4.937 = 112.087
+
+ *** FCFS - Average wait time = 54.399
+ *** FCFS - Average turnaround time = 60.557
+
+   Evaluating single algorithm: FCFS
